@@ -1,8 +1,14 @@
 const { default: makeWASocket, useSingleFileAuthState } = require("@whiskeysockets/baileys");
-const { Boom } = require("@hapi/boom");
-const fs = require("fs");
 const pino = require("pino");
 const { handler } = require("./handler");
+
+// Replit fix for logger (use pino-pretty instead of default pino logger)
+const logger = pino({
+  level: 'silent',
+  transport: {
+    target: 'pino-pretty'
+  }
+});
 
 const { state, saveState } = useSingleFileAuthState('./session.json');
 
@@ -10,7 +16,7 @@ async function startBot() {
   const sock = makeWASocket({
     printQRInTerminal: true,
     auth: state,
-    logger: pino({ level: 'silent' })
+    logger
   });
 
   sock.ev.on('creds.update', saveState);
