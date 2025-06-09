@@ -1,2 +1,0 @@
-run = "node connect.js"
-language = "nodejs"
