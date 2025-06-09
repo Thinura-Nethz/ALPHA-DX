@@ -1,0 +1,16 @@
+{
+  "name": "alpha-dx-bot",
+  "version": "1.0.0",
+  "description": "ALPHA DX WhatsApp Bot",
+  "main": "connect.js",
+  "scripts": {
+    "start": "node connect.js"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.6.0",
+    "axios": "^1.6.7",
+    "chalk": "^5.3.0",
+    "figlet": "^1.6.0",
+    "form-data": "^4.0.0"
+  }
+}
