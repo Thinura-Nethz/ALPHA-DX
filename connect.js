@@ -21,3 +21,5 @@ async function startBot() {
     await handler(sock, msg);
   });
 }
+
+startBot();
